@@ -43,7 +43,7 @@ import butterknife.ButterKnife;
 import data.MovieContract;
 
 
-public class DetailsFragment extends Fragment {
+public class MovieDetailsFragment extends Fragment {
 
     @BindView(R.id.txtDetailsOverview)
     TextView textOverview;

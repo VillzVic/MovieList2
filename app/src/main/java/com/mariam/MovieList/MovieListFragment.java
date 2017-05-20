@@ -95,8 +95,8 @@ public class MovieListFragment extends Fragment implements LoaderManager.LoaderC
 
         ButterKnife.bind(this, view);
 
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), getResources().getInteger(R.integer.mainNumberOfColumns))); // Setting the layout to GridLayout. The number of columns depends on the device type ( Mobile - Tablet )
 
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), getResources().getInteger(R.integer.mainNumberOfColumns))); // Setting the layout to GridLayout. The number of columns depends on the device type ( Mobile - Tablet )
 
 
         requestQueue = VolleySingleton.getInstance().getRequestQueue(getActivity());
@@ -328,7 +328,6 @@ public class MovieListFragment extends Fragment implements LoaderManager.LoaderC
     public void onLoaderReset(Loader<Cursor> loader) {
     }
 
-
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -339,13 +338,27 @@ public class MovieListFragment extends Fragment implements LoaderManager.LoaderC
 
     }
 
+    @Override
+    public void onRestoreInstanceState(Bundle state) {
+        super.onRestoreInstanceState(state);
+
+        // Retrieve list state and list/item positions
+        if(state != null)
+            mselected = state.getInt(KEY_FOR_SELECTED_POSITION);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (mselected != null) {
+            ((MyRecyclerViewAdapter)recyclerView.getAdapter()).onRestoreInstanceState(mselected);
+        }
+    }
 
     public interface ChangeDetails{
         void showDetails(Movie movie , boolean byClick);
     }
-
-
-
 
 
 

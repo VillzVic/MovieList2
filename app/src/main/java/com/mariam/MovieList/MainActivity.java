@@ -40,7 +40,9 @@ public class MainActivity extends AppCompatActivity implements MovieListFragment
     protected void onRestart() {
         super.onRestart();
 
-        movieListFragment.refreshFavorite();
+        if(movieListFragment != null){
+            movieListFragment.refreshFavoriteMovies();
+        }
 
     }
 

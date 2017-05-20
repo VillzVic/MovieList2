@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mariam.MovieList">
+    package="com.orie.popularmovies2">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -21,7 +21,7 @@
         <activity android:name=".MovieDetails"></activity>
 
         <provider
-            android:authorities="com.mariam.MovieList"
+            android:authorities="com.orie.popularmovies2"
             android:name="data.MoviesProvider"
             android:exported="false"/>
     </application>

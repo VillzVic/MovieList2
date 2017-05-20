@@ -13,37 +13,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.CompoundButton;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.ToggleButton;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.shamdroid.popularmovies.R;
-import com.squareup.picasso.Picasso;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.w3c.dom.Text;
 
-import java.util.ArrayList;
 
-import Utilities.Util;
-import Utilities.VolleySingleton;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import data.MovieContract;
-import data.MoviesDBHelper;
 
 public class MovieDetails extends AppCompatActivity {
 
@@ -52,7 +25,7 @@ public class MovieDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
 
-        DetailsFragment detailsFragment = new DetailsFragment();
+        MovieDetailsFragment detailsFragment = new MovieDetailsFragment();
 
         Bundle args = new Bundle();
 
